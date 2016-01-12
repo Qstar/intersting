@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+	<link rel="stylesheet" href="testCss.css">
+	<style>
+	h2{
+		width: 100px;
+		height: 100px;
+		background: #333;
+		text-align: center;
+		color: #fff;
+	}
+	h2:hover{
+		transition: all 2s ease-in 1s;
+		transform: translate(100px);
+		background-color: #f00;
+	}
+	/*img{
+		width: 50%;
+		height: 50%;
+	}*/
+	</style>
+</head>
+<body>
+	<h2>Qstar</h2>
+	<figure class="test1">
+		<img src="image.jpg">
+		<figcaption>
+			<h3>图片标题</h3>
+			<p>图片注解</p>
+			<p>图片注解</p>
+			<p>图片注解</p>
+		</figcaption>
+	</figure>
+
+	<figure class="test2">
+		<img src="image.jpg">
+		<figcaption>
+			<h3>旋转动画</h3>
+			<p>飞来飞去，飞来飞舞</p>
+			<div></div>
+		</figcaption>
+	</figure>
+
+	<figure class="test3">
+		<img src="image.jpg">
+		<figcaption>
+			<h3>斜切动画</h3>
+			<p>斜切动画注解</p>
+		</figcaption>
+	</figure>
+
+	<figure class="test4">
+		<img src="image.jpg">
+		<figcaption>
+			<h3>旋转动画</h3>
+			<p>飞来飞去，飞来飞舞</p>
+			<div></div>
+		</figcaption>
+	</figure>
+</body>
+</html>
