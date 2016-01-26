@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+  <script type="text/javascript"> 
+      window.onload = function(){
+                  
+     // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。  
+         var trs =document.getElementsByTagName("tr");
+         for(var i=0;i<trs.length;i++){
+             trs[i].onmouseover=function(){this.style.backgroundColor="#f2f2f2";}
+             trs[i].onmouseout=function(){this.style.backgroundColor="#fff";}
+         }
+	 }
+     
+      // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+     function addnode () {
+     	 var table=document.getElementById("table");
+     	 var newtr=document.createElement("tr");
+     	 var td1 = document.createElement("td");
+     	 var td2 = document.createElement("td");
+     	 var td3 = document.createElement("td");
+     	 var a=document.createElement("a");
+     	 a.href="javascript:void(0);";
+     	 a.onclick="delnode()";
+     	 var atxt=document.createTextNode("删除");
+     	 a.appendChild(atxt);
+     	 td3.appendChild(a);
+     	 newtr.appendChild(td1);
+     	 newtr.appendChild(td2);
+     	 newtr.appendChild(td3);
+     	 table.appendChild(newtr);  
+     }
+    	
+   	 
+     // 创建删除函数
+     function delnode(obj){
+     	 var parent = obj.parentNode.parentNode.parentNode;
+     	 parent.removeChild(obj.parentNode.parentNode);
+     }
+
+
+  </script> 
+ </head> 
+ <body> 
+	   <table border="1" width="50%" id="table">
+	   <tr>
+		<th>学号</th>
+		<th>姓名</th>
+		<th>操作</th>
+	   </tr>  
+
+	   <tr>
+		<td>xh001</td>
+		<td>王小明</td>
+		<td><a href="javascript:void(0);" onclick="delnode(this)">删除</a></td>   <!--在删除按钮上添加点击事件  -->
+	   </tr>
+
+	   <tr>
+		<td>xh002</td>
+		<td>刘小芳</td>
+		<td><a href="javascript:void(0);" onclick="delnode(this)">删除</a></td>   <!--在删除按钮上添加点击事件  -->
+	   </tr>  
+
+	   </table>
+	   <input type="button" value="添加一行"  onclick="addnode()" />   <!--在添加按钮上添加点击事件  -->
+ </body>
+</html>
