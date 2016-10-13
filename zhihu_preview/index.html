@@ -1,0 +1,57 @@
+﻿<html ng-app="zhihu">
+
+	<head>
+		<title>Zhihu Preview</title>
+		<link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="styles/main.css" />
+		<script type="text/javascript" src="scripts/angular.min.js"></script>
+		<script type="text/javascript" src="scripts/controller.js"></script>
+	</head>
+
+	<body data-ng-controller="zhihuPreviewCtrl">
+		<div class="	banner">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" id="search" placeholder="搜索你想邀请的人" ng-model="query">
+				</div>
+				您已邀请<span ng-repeat="person in persons|limitTo:2"><a href="{{comment}}">{{person.name}}</a>、</span>等<span>{{count}}</span>人
+			</form>
+			<h4>推荐人选</h4>
+
+			<div class="invited">
+				<div class="col-sm-6 margin-left15 margin-bottom20" ng-repeat="invite in invited | filter:query">
+					<div class="col-sm-2 margin-left15">
+						<img ng-src="{{invite.avatarUrl}}" class="img-thumbnail img-thumb" />
+					</div>
+					<div class="col-sm-8 margin-left50 margin-right65">
+						<a href="{{comment}}">{{invite.name}}</a>
+						<p>{{invite.bio}}</p>
+					</div>
+					<div class="col-sm-2">
+						<a class="btn btn-xs pull-right" ng-init="invite.toggle=true" ng-class="{true: 'btn-danger', false: 'btn-primary'}[invite.toggle]" ng-click="invite.toggle = !invite.toggle" ng-model="invite.toggle" ng-change="change()">{{invite.toggle && '收回邀请' || '邀请回答'}}</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="recommended">
+				<div class="col-sm-6 margin-left15 margin-bottom20" ng-repeat="recommend in recommended | filter:query">
+					<div class="col-sm-2 margin-left15">
+						<img ng-src="{{recommend.avatarUrl}}" class="img-thumbnail img-thumb" />
+					</div>
+					<div class="col-sm-8 margin-left50 margin-right65">
+						<a href="{{comment}}">{{recommend.name}}</a>
+						<p>{{recommend.bio}}</p>
+					</div>
+					<div class="col-sm-2">
+						<a class="btn btn-xs pull-right" ng-init="recommend.toggle=false" ng-class="{true: 'btn-danger', false: 'btn-primary'}[recommend.toggle]" ng-click="recommend.toggle = !recommend.toggle">{{!recommend.toggle && '邀请回答' || '收回邀请'}}</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

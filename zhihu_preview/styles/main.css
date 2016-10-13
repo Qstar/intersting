@@ -1,0 +1,49 @@
+.banner {
+	overflow: hidden;
+	border-radius: 5px;
+	border: 1px #dddddd solid;
+	margin: 10px;
+	padding: 10px;
+}
+.img-thumb {
+	padding: 0;
+}
+.margin-left15 {
+	margin-left: -15px;
+}
+.margin-left50 {
+	margin-left: -50px;
+}
+.margin-right {
+	margin-right: -15px;
+}
+.margin-right65 {
+	margin-right: 65px;
+}
+.margin-bottom20 {
+	margin-bottom: 20px;
+}
+.invited {
+	overflow: hidden;
+}
+.recommended {
+	padding: 10px 0;
+	overflow: hidden;
+	border-top: 1px dotted #dddddd;
+}
+.btn-danger {
+	color: #fff;
+	background-color: #000;
+	border-color: #000;
+}
+.btn-danger:hover {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+.btn-danger.focus,
+.btn-danger:focus {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
